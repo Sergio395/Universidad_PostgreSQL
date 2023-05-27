@@ -4,4 +4,8 @@ from django.db import models
 
 class Curso(models.Model):
     nombre = models.CharField(max_length=30)
-    creditos = models.PositiveSmallIntegerField()
+    creditos = models.PositiveSmallIntegerField() #exclude en adm exige un default=0
+    
+    def __str__(self):
+        texto="{0} ({1})"
+        return texto.format(self.nombre, self.creditos)
