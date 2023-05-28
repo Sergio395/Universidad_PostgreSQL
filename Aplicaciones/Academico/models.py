@@ -19,7 +19,7 @@ class Docente(models.Model):
     class Meta:
         verbose_name='Docente'
         verbose_name_plural='Docentes'
-        db_table='docente'
+        db_table ='docente'
         ordering=['apellido_paterno','-apellido_materno']
 
 

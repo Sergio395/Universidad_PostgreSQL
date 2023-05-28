@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Curso
+from .models import Curso, Docente
 # Register your models here.
 
 #1 admin.site.register(Curso)
@@ -36,3 +36,5 @@ class CursoAdmin(admin.ModelAdmin): #2 y #3
     datos.short_description="CURSO (MAYUS)"
     datos.empty_value_display = "???"
     datos.admin_order_field = 'nombre'
+    
+admin.site.register(Docente)
