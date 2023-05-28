@@ -1,4 +1,4 @@
 sexos=(
-    ('F','Femenino')
+    ('F','Femenino'),
     ('M', 'Masculino')
 )

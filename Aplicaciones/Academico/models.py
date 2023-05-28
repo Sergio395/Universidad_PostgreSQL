@@ -15,6 +15,12 @@ class Docente(models.Model):
 
     def __str__(self):
         return self.nombre_completo()
+    
+    class Meta:
+        verbose_name='Docente'
+        verbose_name_plural='Docentes'
+        db_table='docente'
+        ordering=['apellido_paterno','-apellido_materno']
 
 
 
@@ -22,6 +28,7 @@ class Docente(models.Model):
 class Curso(models.Model):
     nombre = models.CharField(max_length=30)
     creditos = models.PositiveSmallIntegerField() #exclude en adm exige un default=0
+    docente=models.ForeignKey(Docente,null=True,blank=True,on_delete=models.CASCADE)
     
     def __str__(self):
         texto="{0} ({1})"
